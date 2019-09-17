@@ -4,7 +4,7 @@ class Map extends Component {
 
     render() {
         return (
-            <img src="default.jpg" />
+            <img src="images/none.png" alt="No Store Selected" />
         );
     }
 }

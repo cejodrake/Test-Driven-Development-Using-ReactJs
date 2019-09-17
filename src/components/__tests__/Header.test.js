@@ -1,11 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 import Header from '../Header';
+import { shallow } from 'enzyme';
 
+describe('Header', () => {
+    let mountedHeader;
+    beforeEach(() => {
+        mountedHeader = shallow(<Header />);
+    });
 
-it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Header />, div);
-    ReactDOM.unmountComponentAtNode(div);
+    it('renders without crashing', () => {
+        shallow(<Header />);
+    });
+
+    it('renders a log', () => {
+        const logImg = mountedHeader.find('img[src="images/wired-brain-coffee-logo.png"]');
+        expect(logImg.length).toBe(1);
+    })
+
 });
-
